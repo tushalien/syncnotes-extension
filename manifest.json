@@ -1,0 +1,26 @@
+{
+  "name": "Syncnotes",
+  "manifest_version": 2,
+  "version": "0.1",
+  "icons": {
+    "128": "images/icon.png"
+  },
+  "description": "Now sing along the youtube videos. Provides subtitles for music videos.",
+  "permissions": [
+    "*://*/*",
+    "storage"
+  ],
+
+  "content_scripts": [{
+    "matches": ["*://www.youtube.com/*"],
+    "js": ["js/libs/jquery-1.11.1.js",
+    
+    "js/bubbles.js", "js/subtitleLoader.js", "js/actualScript.js"],
+    "css": ["css/style.css"]
+  }],
+  "background": {
+    "scripts": ["js/libs/jquery-1.11.1.js",
+     "js/background.js"],
+    "persistent": false
+  }
+}
